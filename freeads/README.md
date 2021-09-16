@@ -1,3 +1,30 @@
+# Freeads
+
+Site de vente en ligne sur le framework Laravel
+
+# Description 
+
+- Créer un site de petites annonces avec systeme d'authentification 
+- Confirmation de compte avec Mail
+- Reinitialisation Mot de Passe 
+- Possibilité de créer et consulter les annonces ** Systeme de CRUD en SQL
+- Temps du Projet 4 Jours en solo
+
+# Prérequis
+
+Lancez Sur le serveur en local
+Pour MacOS installez MAMP
+
+
+Lancez les commandes dans un terminal:
+php artisan serve 
+
+
+Lancez un navigateur sous :
+
+http://127.0.0.1:8000/
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
