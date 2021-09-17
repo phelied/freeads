@@ -8,6 +8,7 @@ Site de vente en ligne sur le framework Laravel
 - Confirmation de compte avec Mail
 - Reinitialisation Mot de Passe 
 - Possibilité de créer et consulter les annonces ** Systeme de CRUD en SQL
+- Recherche d'annonce avec SearchBar avec auto-complétion
 - Temps du Projet 4 Jours en solo
 
 # Prérequis
