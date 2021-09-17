@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -37,14 +38,18 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-
-        $this->validate(request(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required'
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|max:225|email',
+            'password' => 'required|max:255',
         ]);
-        
-        $user =User::create(request(['name', 'email', 'password']));
+        if ($validator->fails()) {
+            return redirect('/register')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $user = User::create(request(['name', 'email', 'password']));
         event(new Registered($user));
         Auth::login($user);
 

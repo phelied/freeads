@@ -1,3 +1,44 @@
+<script type="text/javascript">
+    $('#search').select2({
+        placeholder: 'Search',
+        language: {
+      noResults: function() {
+        return '';
+      },
+    },
+    escapeMarkup: function(markup) {
+      return markup;
+    },
+        ajax: {
+            url: '/ajax-autocomplete-search',
+            dataType: 'json',
+            delay: 250,
+            processResults: function(data) {
+                return {
+                    results: $.map(data, function(item) {
+                        return {
+                            text: item.title,
+                            id: item.id
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    }).on("select2:select", function(e) {
+        var selected = e.params.data;
+        console.log(selected);
+        window.location = '/search/' + selected.text;
+    });
+
+    $(document).on('keydown', '.select2-search__field', function(e) {
+        if (e.keyCode === 13) {
+            var value = $('.select2-search__field').val();
+            console.log(value);
+            window.location = '/search/' + value;
+        }
+    });
+</script>
 </body>
 <footer class="row footer">
     <div id="copyright text-right">© Copyright 2021 Ophelie Diomar </div>

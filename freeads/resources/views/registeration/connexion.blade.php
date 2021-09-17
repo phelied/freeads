@@ -1,6 +1,15 @@
 @extends('layouts.default')
 @section('content')
 <h2>Connexion</h2>
+
+@if($errors)
+@foreach($errors->all() as $error)
+<div class="alert alert-danger" role="alert">
+    {{ $error }}
+</div>
+@endforeach
+@endif
+
 <form method="POST" action="/login">
     {{ csrf_field() }}
 

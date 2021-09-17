@@ -1,6 +1,15 @@
 @extends('layouts.default')
 @section('content')
 <h2>Register</h2>
+
+@if($errors)
+@foreach($errors->all() as $error)
+<div class="alert alert-danger" role="alert">
+    {{ $error }}
+</div>
+@endforeach
+@endif
+
     <form method="POST" action="/register">
         {{ csrf_field() }}
         <div class="form-group">
