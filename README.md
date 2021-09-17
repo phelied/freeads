@@ -1,6 +1,6 @@
 # Freeads
 
-Site de vente en ligne sur le framework Laravel
+Site d'annonces en ligne sur le framework Laravel
 
 # Description 
 
